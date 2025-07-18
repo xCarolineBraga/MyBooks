@@ -1,4 +1,4 @@
-package com.example.mybooks.ui.dashboard
+package com.example.mybooks.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mybooks.databinding.FragmentDashboardBinding
+import com.example.mybooks.viewmodels.DashboardViewModel
 
 class DashboardFragment : Fragment() {
 

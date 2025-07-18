@@ -7,19 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.mybooks.ui.home.HomeFragment"
+        android:name="com.example.mybooks.ui.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.mybooks.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:name="com.example.mybooks.ui.DashboardFragment"
+        android:label="@string/title_favorites"
         tools:layout="@layout/fragment_dashboard" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.mybooks.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+
 </navigation>
