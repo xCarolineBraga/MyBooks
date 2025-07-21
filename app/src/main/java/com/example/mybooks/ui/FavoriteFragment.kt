@@ -6,31 +6,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.mybooks.databinding.FragmentDashboardBinding
-import com.example.mybooks.viewmodels.DashboardViewModel
+import androidx.fragment.app.viewModels
+import com.example.mybooks.databinding.FragmentFavoriteBinding
+import com.example.mybooks.viewmodels.FavoriteViewModel
 
-class DashboardFragment : Fragment() {
+class FavoriteFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
+
+   private val viewModel : FavoriteViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+
+        _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
