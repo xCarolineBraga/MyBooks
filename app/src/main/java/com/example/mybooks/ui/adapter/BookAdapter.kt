@@ -7,12 +7,12 @@ import com.example.mybooks.databinding.ItemBookBinding
 import com.example.mybooks.entity.BookEntity
 import com.example.mybooks.ui.viewholder.BookViewHolder
 
-class BookAdapter :  RecyclerView.Adapter<BookViewHolder>() {
+class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
 
-    private val booklist = mutableListOf<BookEntity>()
+    private var booklist : List<BookEntity> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
-        val view = ItemBookBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val view = ItemBookBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BookViewHolder(view)
     }
 
@@ -22,5 +22,10 @@ class BookAdapter :  RecyclerView.Adapter<BookViewHolder>() {
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         holder.bind(booklist[position])
+    }
+
+
+    fun updateBooks(list: List<BookEntity>) {
+        booklist = list
     }
 }
