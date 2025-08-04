@@ -27,5 +27,6 @@ class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
 
     fun updateBooks(list: List<BookEntity>) {
         booklist = list
+        notifyDataSetChanged()
     }
 }
