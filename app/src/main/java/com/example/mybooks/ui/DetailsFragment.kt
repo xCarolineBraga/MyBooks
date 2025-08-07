@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import com.example.mybooks.viewmodels.DetailsViewModel
+import com.example.mybooks.viewmodel.DetailsViewModel
 
 import com.example.mybooks.databinding.FragmentDetailsBinding
 
