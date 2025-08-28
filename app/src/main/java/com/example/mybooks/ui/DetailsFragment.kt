@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.example.mybooks.viewmodel.DetailsViewModel
 
 import com.example.mybooks.databinding.FragmentDetailsBinding
+import com.example.mybooks.helper.BookConstants
 
 
 class DetailsFragment : Fragment() {
@@ -18,6 +19,7 @@ class DetailsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: DetailsViewModel by viewModels()
+    private var bookId = 0
 
 
     override fun onCreateView(
@@ -25,12 +27,25 @@ class DetailsFragment : Fragment() {
     ): View {
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
+        setObservers()
+
+        bookId = arguments?.getInt(BookConstants.Key.BOOK_ID) ?: 0
+
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setObservers() {
+        viewModel.book.observe(viewLifecycleOwner){
+            binding.textviewTitle.text = it.title
+            binding.textviewGenreValue.text = it.genre
+            binding.textviewAuthorValue.text = it.author
+            binding.checkboxFavorite.isChecked = it.favorite
+        }
     }
 
 }
