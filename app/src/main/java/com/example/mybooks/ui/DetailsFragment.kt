@@ -30,6 +30,7 @@ class DetailsFragment : Fragment() {
         setObservers()
 
         bookId = arguments?.getInt(BookConstants.Key.BOOK_ID) ?: 0
+        viewModel.getBookById(bookId)
 
         return binding.root
     }
@@ -41,6 +42,7 @@ class DetailsFragment : Fragment() {
 
     private fun setObservers() {
         viewModel.book.observe(viewLifecycleOwner){
+
             binding.textviewTitle.text = it.title
             binding.textviewGenreValue.text = it.genre
             binding.textviewAuthorValue.text = it.author
