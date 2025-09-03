@@ -8,7 +8,7 @@ import com.example.mybooks.repository.BookRepository
 
 class DetailsViewModel : ViewModel() {
 
-    private val repository =  BookRepository()
+    private val repository =  BookRepository.getInstance()
 
     private val _book = MutableLiveData<BookEntity>()
     val book: LiveData<BookEntity> = _book

@@ -69,10 +69,6 @@ class DetailsFragment : Fragment() {
         viewModel.favorite(bookId)
 
         requireActivity().supportFragmentManager.popBackStack()
-
-
-
-
     }
 
     private fun handleRemove() {
