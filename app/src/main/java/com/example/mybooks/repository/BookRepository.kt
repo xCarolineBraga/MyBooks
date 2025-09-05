@@ -9,6 +9,7 @@ class BookRepository private constructor() {
     init {
         books.addAll(getInitialBooks())
     }
+
     companion object {
         private lateinit var instance: BookRepository
 

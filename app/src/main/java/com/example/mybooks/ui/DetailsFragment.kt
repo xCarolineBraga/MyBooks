@@ -63,6 +63,7 @@ class DetailsFragment : Fragment() {
            handleFavorite()
        }
 
+
     }
 
     private fun handleFavorite(){

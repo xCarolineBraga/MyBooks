@@ -39,8 +39,6 @@ class HomeFragment : Fragment() {
 
         attachListener()
 
-
-
         setObservers()
 
         return binding.root
@@ -66,6 +64,11 @@ class HomeFragment : Fragment() {
                 bundle.putInt(BookConstants.Key.BOOK_ID,id)
 
                 findNavController().navigate(R.id.navigation_details,bundle)
+            }
+
+            override fun onFavoriteClick(id: Int) {
+                viewModel.favorite(id)
+                viewModel.getAllBooks()
             }
         })
     }

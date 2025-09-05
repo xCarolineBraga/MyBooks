@@ -15,7 +15,9 @@ class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+
         val view = ItemBookBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
         return BookViewHolder(view,bookListener)
     }
 
@@ -26,7 +28,6 @@ class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         holder.bind(booklist[position])
     }
-
 
     fun upDateBooks(list: List<BookEntity>) {
         booklist = list

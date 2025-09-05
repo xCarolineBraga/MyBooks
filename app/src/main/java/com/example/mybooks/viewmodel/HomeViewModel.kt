@@ -16,4 +16,8 @@ class HomeViewModel : ViewModel() {
     fun getAllBooks() {
        _books.value = repository.getAllBooks()
     }
+
+    fun favorite(id: Int){
+        repository.toggleFavoriteStatus(id)
+    }
 }
