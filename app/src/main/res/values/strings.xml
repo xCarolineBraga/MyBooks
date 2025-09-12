@@ -20,5 +20,14 @@
     <!-- Botões e descrições -->
     <string name="button_remove_book">Remover livro</string>
     <string name="desc_book_image">Imagem de livros</string>
+    <string name="autor">Autor</string>
+    <string name="titulo_do_livro">Titulo do livro</string>
+    <string name="valor_para_autor">Valor para autor</string>
+    <string name="g_nero">Gênero</string>
+    <string name="valor_para_g_nero">Valor para gênero</string>
+    <string name="livro_favorito">Livro Favorito?</string>
+    <string name="favorito">Favorito</string>
+    <string name="remover_livro">Remover Livro</string>
+    <string name="fantasia">Fantasia</string>
 
 </resources>

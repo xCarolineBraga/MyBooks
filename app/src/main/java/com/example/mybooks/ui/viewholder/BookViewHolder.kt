@@ -1,6 +1,6 @@
 package com.example.mybooks.ui.viewholder
 
-import android.view.View
+
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mybooks.R
 import com.example.mybooks.databinding.ItemBookBinding
@@ -24,25 +24,47 @@ class BookViewHolder(private val item: ItemBookBinding, private val listener: Bo
         updateFavoriteIcon(book.favorite)
     }
 
-    private fun updateFavoriteIcon(favorite: Boolean){
-        if (favorite){
+    private fun updateFavoriteIcon(favorite: Boolean) {
+        if (favorite) {
             item.imageviewFavorite.setImageResource(R.drawable.ic_favorite)
-        }else{
+        } else {
             item.imageviewFavorite.setImageResource(R.drawable.ic_favorite_empty)
         }
     }
 
-    private fun setGenreBackground (genre: String){
+    private fun setGenreBackground(genre: String) {
         when (genre) {
             "Terror" -> {
-                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_red)
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_terror)
             }
+
             "Fantasia" -> {
                 item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_fantasy)
             }
-            else -> {
-                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_teal)
 
+            "Ficção" -> {
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_fiction)
+
+            }
+
+            "Romance" -> {
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_romance)
+            }
+
+            "Ficção policial" -> {
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_detectivefiction)
+            }
+
+            "Cyberpunk" -> {
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_cyberpunk)
+            }
+
+            "Mistério" -> {
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_mystery)
+            }
+
+            "Aventura" -> {
+                item.textviewGenre.setBackgroundResource(R.drawable.rounded_label_adventure)
             }
         }
     }

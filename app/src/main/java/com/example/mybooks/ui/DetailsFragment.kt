@@ -1,6 +1,6 @@
 package com.example.mybooks.ui
 
-import android.content.DialogInterface
+
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -59,14 +59,14 @@ class DetailsFragment : Fragment() {
             handleRemove()
         }
 
-       binding.checkboxFavorite.setOnClickListener{
-           handleFavorite()
-       }
+        binding.checkboxFavorite.setOnClickListener {
+            handleFavorite()
+        }
 
 
     }
 
-    private fun handleFavorite(){
+    private fun handleFavorite() {
         viewModel.favorite(bookId)
 
         requireActivity().supportFragmentManager.popBackStack()
@@ -76,13 +76,8 @@ class DetailsFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setMessage(getString(R.string.dialog_message_delete_item))
             .setPositiveButton(
-                getString(R.string.dialog_positive_button_yes),
-                object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface?, which: Int) {
-                        viewModel.deleteBook(bookId)
-                    }
-
-                })
+                getString(R.string.dialog_positive_button_yes)
+            ) { dialog, which -> viewModel.deleteBook(bookId) }
             .setNegativeButton(
                 getString(R.string.dialog_negative_button_no)
             ) { dialog, which -> dialog.dismiss() }
@@ -117,16 +112,36 @@ class DetailsFragment : Fragment() {
     private fun setGenreBackground(genre: String) {
         when (genre) {
             "Terror" -> {
-                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_red)
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_terror)
             }
 
             "Fantasia" -> {
                 binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_fantasy)
             }
 
-            else -> {
-                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_teal)
+            "Ficção" -> {
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_fiction)
 
+            }
+
+            "Romance" -> {
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_romance)
+            }
+
+            "Ficção policial" -> {
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_detectivefiction)
+            }
+
+            "Cyberpunk" -> {
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_cyberpunk)
+            }
+
+            "Mistério" -> {
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_mystery)
+            }
+
+            "Aventura" -> {
+                binding.textviewGenreValue.setBackgroundResource(R.drawable.rounded_label_adventure)
             }
         }
     }

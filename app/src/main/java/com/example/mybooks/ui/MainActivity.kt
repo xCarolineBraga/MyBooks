@@ -33,20 +33,20 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-            setUpNavigation()
-        }
-
-        private fun setUpNavigation() {
-            val navView: BottomNavigationView = binding.navView
-
-            val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-            val appBarConfiguration = AppBarConfiguration(
-                setOf(
-                    R.id.navigation_home, R.id.navigation_favorite
-                )
-            )
-            setupActionBarWithNavController(navController, appBarConfiguration)
-            navView.setupWithNavController(navController)
-        }
+        setUpNavigation()
     }
+
+    private fun setUpNavigation() {
+        val navView: BottomNavigationView = binding.navView
+
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_favorite
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+    }
+}

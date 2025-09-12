@@ -18,7 +18,7 @@ class BookAdapter : RecyclerView.Adapter<BookViewHolder>() {
 
         val view = ItemBookBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return BookViewHolder(view,bookListener)
+        return BookViewHolder(view, bookListener)
     }
 
     override fun getItemCount(): Int {

@@ -9,7 +9,7 @@
         android:id="@+id/textview_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titulo do livro"
+        android:text="@string/titulo_do_livro"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:background="@drawable/rounded_label_teal"
+        android:background="@drawable/rounded_label_fiction"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:text="Fantasia"
+        android:text="@string/fantasia"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="Autor"
+        android:text="@string/autor"
         app:layout_constraintStart_toEndOf="@id/textview_genre"
         app:layout_constraintTop_toBottomOf="@id/textview_title" />
 
@@ -44,6 +44,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_favorite"
+        android:contentDescription="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

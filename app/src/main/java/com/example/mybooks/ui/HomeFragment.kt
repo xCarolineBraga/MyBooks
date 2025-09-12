@@ -20,8 +20,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel : HomeViewModel by viewModels()
-    private val adapter : BookAdapter = BookAdapter()
+    private val viewModel: HomeViewModel by viewModels()
+    private val adapter: BookAdapter = BookAdapter()
 
 
     override fun onCreateView(
@@ -55,26 +55,27 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    private fun attachListener(){
-        adapter.attachListener(object : BookListener{
+    private fun attachListener() {
+        adapter.attachListener(object : BookListener {
 
             override fun onClick(id: Int) {
 
                 val bundle = Bundle()
-                bundle.putInt(BookConstants.Key.BOOK_ID,id)
+                bundle.putInt(BookConstants.Key.BOOK_ID, id)
 
-                findNavController().navigate(R.id.navigation_details,bundle)
+                findNavController().navigate(R.id.navigation_details, bundle)
             }
 
             override fun onFavoriteClick(id: Int) {
                 viewModel.favorite(id)
                 viewModel.getAllBooks()
             }
+
         })
     }
 
-    private fun setObservers(){
-        viewModel.books.observe(viewLifecycleOwner){
+    private fun setObservers() {
+        viewModel.books.observe(viewLifecycleOwner) {
             adapter.upDateBooks(it)
         }
     }

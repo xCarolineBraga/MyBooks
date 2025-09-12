@@ -10,6 +10,8 @@
     <color name="red">#BD0820</color>
     <color name="gold">#FFD700</color>
     <color name="blue">#1E90FF</color>
+    <color name="dark_blue">#2B3349</color>
     <color name="light_red">#FF6347</color>
     <color name="grey">#9B9595</color>
+    <color name="brown">#A76523</color>
 </resources>
